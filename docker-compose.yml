@@ -21,8 +21,8 @@ services:
         environment:
             - SSH_USER=${IDLERPG_SSH_USER}
             - SSH_PUBLIC_KEY=${IDLERPG_SSH_PUBLIC_KEY}
-            # - TLS_CERT_PATH=/certs/live/rottehjem.duckdns.org/fullchain.pem
-            # - TLS_KEY_PATH=/certs/live/rottehjem.duckdns.org/privkey.pem
+            - TLS_CERT_PATH=/certs/live/npm-2/fullchain.pem
+            - TLS_KEY_PATH=/certs/live/npm-2/privkey.pem
         volumes:
             - ./nginx/letsencrypt:/certs:ro
 
