@@ -1,0 +1,37 @@
+version: '2.2'
+services:
+    nginxproxymanager:
+        image: 'jc21/nginx-proxy-manager:latest'
+        container_name: nginxproxymanager
+        restart: unless-stopped
+        ports:
+            - '80:80'
+            - '81:81'
+            - '443:443'
+        volumes:
+            - ./nginx/data:/data
+            - ./nginx/letsencrypt:/etc/letsencrypt
+
+    idlerpg:
+        image: 'oliverec/idle-rpg:latest'
+        container_name: idlerpg
+        restart: unless-stopped
+        ports:
+            - '4022:22'
+            - '4000:4000'
+        environment:
+            - SSH_USER=${IDLERPG_SSH_USER}
+            - SSH_PUBLIC_KEY=${IDLERPG_SSH_PUBLIC_KEY}
+
+    # jellyfin:
+    #   image: lscr.io/linuxserver/jellyfin:latest
+    #   container_name: jellyfin
+    #   environment:
+    #     - PUID=1000
+    #     - PGID=1000
+    #     - TZ=Europe/Berlin
+    #   volumes:
+    #     - ./jellyfin/config:/config
+    #     - ./jellyfin/tvshows:/data/tvshows
+    #     - ./jellyfin/movies:/data/movies
+    #   restart: unless-stopped
