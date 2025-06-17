@@ -12,7 +12,7 @@ services:
             - ./nginx/letsencrypt:/etc/letsencrypt
 
     idlerpg:
-        image: 'oliverec/idle-rpg:latest'
+        image: 'ghcr.io/frederikja163/idlerpg:latest'
         container_name: idlerpg
         restart: unless-stopped
         ports:
