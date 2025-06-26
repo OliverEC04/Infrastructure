@@ -12,7 +12,7 @@ services:
             - ./nginx/letsencrypt:/etc/letsencrypt
 
     idlerpg:
-        image: 'ghcr.io/frederikja163/idlerpg:latest'
+        image: 'ghcr.io/frederikja163/idlerpg:v0.0.2'
         pull_policy: always
         container_name: idlerpg
         restart: unless-stopped
