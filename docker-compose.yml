@@ -13,6 +13,7 @@ services:
 
     idlerpg:
         image: 'ghcr.io/frederikja163/idlerpg:latest'
+        pull_policy: always
         container_name: idlerpg
         restart: unless-stopped
         ports:
