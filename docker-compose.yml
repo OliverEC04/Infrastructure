@@ -26,7 +26,7 @@ services:
             - TLS_KEY_PATH=/certs/live/npm-2/privkey.pem
         volumes:
             - ./nginx/letsencrypt:/certs:ro
-            - idlerpg-data:/usr/src/idle-rpg/src/back-end/core/db
+            - idle-rpg-data:/usr/src/idle-rpg/src/back-end/core/db
 
     # jellyfin:
     #   image: lscr.io/linuxserver/jellyfin:latest
@@ -42,4 +42,4 @@ services:
     #   restart: unless-stopped
 
 volumes:
-    idlerpg-data:
+    idle-rpg-data:
