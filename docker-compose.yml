@@ -18,7 +18,7 @@ services:
         restart: unless-stopped
         ports:
             - '4022:22'
-            - '443:4000'
+            - '4000:4000'
         environment:
             - SSH_USER=${IDLERPG_SSH_USER}
             - SSH_PUBLIC_KEY=${IDLERPG_SSH_PUBLIC_KEY}
