@@ -28,18 +28,19 @@ services:
             - ./nginx/letsencrypt:/certs:ro
             - idle-rpg-data:/usr/src/idle-rpg/src/back-end/core/db
 
-    # jellyfin:
-    #   image: lscr.io/linuxserver/jellyfin:latest
-    #   container_name: jellyfin
-    #   environment:
-    #     - PUID=1000
-    #     - PGID=1000
-    #     - TZ=Europe/Berlin
-    #   volumes:
-    #     - ./jellyfin/config:/config
-    #     - ./jellyfin/tvshows:/data/tvshows
-    #     - ./jellyfin/movies:/data/movies
-    #   restart: unless-stopped
+    jellyfin:
+        image: linuxserver/jellyfin:latest
+        container_name: jellyfin
+        restart: unless-stopped
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Europe/Copenhagen
+        volumes:
+            - jellyfin_config:/config
+            - './media/SeagateHub/Film og serier/Film:/data/Film'
+            - './media/SeagateHub/Film og serier/Serier:/data/Serier'
 
 volumes:
     idle-rpg-data:
+    jellyfin_config:
