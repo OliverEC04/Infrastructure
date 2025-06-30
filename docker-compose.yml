@@ -40,8 +40,8 @@ services:
             - TZ=Europe/Copenhagen
         volumes:
             - jellyfin_config:/config
-            - './media/SeagateHub/Film og serier/Film:/data/Film'
-            - './media/SeagateHub/Film og serier/Serier:/data/Serier'
+            - './home/oliver/media/SeagateHub/Film og serier/Film:/data/Film'
+            - './home/oliver/media/SeagateHub/Film og serier/Serier:/data/Serier'
 
 volumes:
     idle-rpg-data:
