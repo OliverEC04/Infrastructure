@@ -40,7 +40,6 @@ services:
             - TZ=Europe/Copenhagen
         volumes:
             - jellyfin_config:/config
-            - ./nginx/letsencrypt:/certs:ro
             - '/media/SeagateHub/Film og serier/Film:/data/Film'
             - '/media/SeagateHub/Film og serier/Serier:/data/Serier'
 
