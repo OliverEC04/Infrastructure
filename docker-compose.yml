@@ -24,6 +24,7 @@ services:
             - SSH_PUBLIC_KEY=${IDLERPG_SSH_PUBLIC_KEY}
             - TLS_CERT_PATH=/certs/live/npm-2/fullchain.pem
             - TLS_KEY_PATH=/certs/live/npm-2/privkey.pem
+            - ADMIN_PASSWORD=${IDLERPG_ADMIN_PASSWORD}
         volumes:
             - ./nginx/letsencrypt:/certs:ro
             - idle-rpg-data:/usr/src/idle-rpg/src/back-end/core/db
